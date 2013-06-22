@@ -1,0 +1,27 @@
+<h1>Listing competency_levels</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Competency</th>
+    <th>Level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @competency_levels.each do |competency_level| %>
+  <tr>
+    <td><%= competency_level.description %></td>
+    <td><%= competency_level.competency_id %></td>
+    <td><%= competency_level.level_id %></td>
+    <td><%= link_to 'Show', competency_level %></td>
+    <td><%= link_to 'Edit', edit_competency_level_path(competency_level) %></td>
+    <td><%= link_to 'Destroy', competency_level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Competency level', new_competency_level_path %>

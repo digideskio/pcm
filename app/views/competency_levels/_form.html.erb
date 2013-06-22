@@ -1,0 +1,29 @@
+<%= form_for(@competency_level) do |f| %>
+  <% if @competency_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@competency_level.errors.count, "error") %> prohibited this competency_level from being saved:</h2>
+
+      <ul>
+      <% @competency_level.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :competency_id %><br />
+    <%= f.number_field :competency_id %>
+  </div>
+  <div class="field">
+    <%= f.label :level_id %><br />
+    <%= f.number_field :level_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
